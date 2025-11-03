@@ -179,6 +179,39 @@ const Dashboard = () => {
             }
           </ul>
         </div>
+        {/* --- NEW CARD 5: Threats Feed --- */}
+        <div className="dashboard-card">
+          <h2>Latest Threats</h2>
+          <ul className="data-list-container">
+            {threats.length === 0 ? <p>No threats reported.</p> :
+              [...threats].reverse().map((item) => (
+                <li key={item.id} className="data-list-item">
+                  {item.name}
+                  <span className="data-list-tag" style={{ backgroundColor: '#cce5ff' }}>
+                    {item.type}
+                  </span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        {/* --- NEW CARD 6: Vulnerabilities Feed --- */}
+        <div className="dashboard-card">
+          <h2>Latest Vulnerabilities</h2>
+          <ul className="data-list-container">
+            {vulnerabilities.length === 0 ? <p>No vulnerabilities found.</p> :
+              [...vulnerabilities].reverse().map((item) => (
+                <li key={item.id} className="data-list-item">
+                  {item.name}
+                  <span className="data-list-tag" style={{ backgroundColor: '#ffecb3' }}>
+                    {item.risk}
+                  </span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
       </div>
     </div>
   );

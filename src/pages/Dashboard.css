@@ -29,23 +29,58 @@
   font-weight: 700; 
 }
 
-/* Incident List */
-.incident-list {
+/* --- THIS IS THE NEW CODE --- */
+
+/* Replaces old .incident-list */
+.data-list-container {
+  /* This makes the list scrollable if it gets too long */
+  max-height: 250px;
+  overflow-y: auto;
   list-style: none;
   padding: 0;
 }
 
+/* This styles each item in the list */
+.data-list-item {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  color: #c0c0c0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.data-list-item:last-child {
+  border-bottom: none;
+}
+
+/* This is the tag (e.g., "Critical", "Phishing") */
+.data-list-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left: 10px; /* Aligns it to the right */
+  color: #333; /* Dark text for light tags */
+}
+/* src/pages/Dashboard.css */
+
 .incident-item {
   padding: 10px;
   border-bottom: 1px solid #333;
-  color: #c0c0c0; /* Lighter text */
+  color: #c0c0c0;
+  display: flex; /* <-- ADD THIS */
+  align-items: center; /* <-- ADD THIS */
 }
-.incident-item:last-child { border-bottom: none; }
-.incident-item span  {
+
+.incident-item span {
   display: inline-block;
   padding: 3px 8px;
   border-radius: 12px;
   font-size: 0.9rem;
   font-weight: 600;
   margin-right: 10px;
+  color: #333; /* <-- ADD THIS (makes text readable) */
+  flex-shrink: 0; /* <-- ADD THIS (prevents tag from shrinking) */
 }
