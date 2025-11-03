@@ -1,0 +1,51 @@
+/* src/pages/Dashboard.css */
+.dashboard {
+  padding: 20px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.dashboard-card {
+  /* New dark card */
+  background: #1e1e1e; 
+  border: 1px solid #333; /* Subtle border */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-card h2 {
+  margin-top: 0;
+  border-bottom: 2px solid #333; /* Darker border */
+  padding-bottom: 10px;
+  color: #ffffff;
+  font-weight: 700; 
+}
+
+/* Incident List */
+.incident-list {
+  list-style: none;
+  padding: 0;
+}
+
+.incident-item {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  color: #c0c0c0; /* Lighter text */
+}
+.incident-item:last-child { border-bottom: none; }
+.incident-item span  {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-right: 10px;
+}
